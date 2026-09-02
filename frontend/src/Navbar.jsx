@@ -1,26 +1,34 @@
+import './Navbar.css';
+
 function Navbar() {
-    return ( 
-    <>
-    <div className="container-fluid sticky-top p-0 ">
-        <div className="row" style={{backgroundColor:"#458FF0"}}>
-            <div className="col-5">
-            <img src="/media/images/main-logo.png" style={{ width:"37%", marginLeft:"190px"}}/>
-            </div>
+    return (
+        <nav className="navbar">
+            <div className="navbar-container">
 
-            <div className="col-7 p-4 mt-2" style={{display:"flex", gap:"30px"}}>
+                {/* Logo */}
+                <a href="/" className="navbar-logo">
+                    <img
+                        src="/media/images/main-logo.png"
+                        alt="Lakshya Sparsh"
+                    />
+                </a>
 
-                <a href="#" style={{color:"white", textDecoration:"none"}}>About us</a>
-                <a href="#" style={{color:"white", textDecoration:"none"}}>Start Investing</a>
-                <a href="#" style={{color:"white", textDecoration:"none"}}>NRI Corner</a>
-                <a href="#" style={{color:"white", textDecoration:"none"}}>Downloads</a>
-                <a href="#" style={{color:"white", textDecoration:"none"}}>Gallery</a>
-                <a href="#" style={{color:"white", textDecoration:"none"}}>Contact Us</a>
-                
-                <button>Login</button>
+                {/* Menu */}
+                <div className="navbar-menu">
+                    <a href="#">About us</a>
+                    <a href="#">Start Investing</a>
+                    <a href="#">NRI Corner</a>
+                    <a href="#">Downloads</a>
+                    <a href="#">Gallery</a>
+                    <a href="#">Contact Us</a>
+
+                    <button className="login-btn">
+                        Login
+                    </button>
+                </div>
+
             </div>
-        </div>
-    </div>
-    </> 
+        </nav>
     );
 }
 

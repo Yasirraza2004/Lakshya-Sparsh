@@ -151,7 +151,7 @@ function DebtFunds() {
             position:"relative",
           }}>
             <img
-              src="/media/images/slide2.jpg"
+              src="/media/images/DebtFund.jpeg"
               alt="logo"
               style={{ width: "80%"}}
             />

@@ -1,168 +1,116 @@
-import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import "./HomeHero.css";
+
+const slides = [
+    {
+        title: "To travel is to live",
+        description: "We help you save for meaningful travel experiences",
+        image: "/media/images/slide1.png",
+    },
+    {
+        title: "Buying your first car?",
+        description: "We will help you buy your first car",
+        image: "/media/images/slide2.jpeg",
+    },
+    {
+        title: "Fund your dream home",
+        description: "We love that smile when you talk about your dream home",
+        image: "/media/images/slide3.jpeg",
+    },
+    {
+        title: "Secure your child's future",
+        description: "Let us help you shape your child’s brighter future",
+        image: "/media/images/slide4.jpeg",
+    },
+    {
+        title: "Make your child's marriage memorable",
+        description: "We help you save for the eternal occasion",
+        image: "/media/images/slide5.jpeg",
+    },
+    {
+        title: "Spend quality time with family",
+        description: "Retire Comfortably",
+        image: "/media/images/slide6.jpeg",
+    },
+];
 
 function HomeHero() {
-  const slides = [
-    {
-      image: "media/images/slide2.jpg",
-      title: "To travel is to live",
-      description: "We help you save for meaningful travel experiences",
-    },
-    {
-      image: "media/images/slide1.jpg",
-      title: (<>
-      Buying your first car? <br /> 
-      We will help you buy your first car
-      </>),
-      description: "Discover beautiful places and create unforgettable memories",
-    },
-    {
-      image: "media/images/slide3.jpg",
-      title: "Make every journey count",
-      description: "Plan your next adventure with us",
-    },
-    {
-      image: "media/images/slide4.jpg",
-      title: "Travel more",
-      description: "Save today for the experiences you dream about",
-    },
-    {
-      image: "media/images/slide5.jpg",
-      title: "Your next adventure",
-      description: "Start planning your perfect trip",
-    },
-    {
-      image: "media/images/landing.svg",
-      title: "Live. Travel. Explore.",
-      description: "Because the best memories are made while travelling",
-    },
-  ];
+    return (
+        <section className="hero-carousel">
 
-  const [currentSlide, setCurrentSlide] = useState(0);
+            <Swiper
+                modules={[Autoplay, Navigation, Pagination]}
+                loop={true}
+                speed={1000}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }}
+                navigation={true}
+                pagination={{
+                    clickable: true,
+                }}
+            >
+                {slides.map((slide, index) => (
+                    <SwiperSlide key={index}>
 
-  // Automatic sliding
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) =>
-        prev === slides.length - 1 ? 0 : prev + 1
-      );
-    }, 4000);
+                        <div className="hero-slide">
 
-    return () => clearInterval(interval);
-  }, [slides.length]);
+                            {/* Background image */}
+                            <img
+                                src={slide.image}
+                                alt={slide.title}
+                                className={`hero-bg slide${index + 1}`}
+                            />
 
-  return (
-    <div className="container">
-      <div className="row">
-        
-    <div
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "500px",
-        overflow: "hidden",
-      }}
-    >
-      {/* Background image */}
-      <img
-        src={slides[currentSlide].image}
-        alt=""
-        style={{
-           width: "110%",
-          height: "100%",
-          objectFit: "cover",
-          position: "absolute",
-          top: 0,
-          left: 0,
-        }}
-      />
+                            {/* Dark overlay */}
+                            <div className="hero-overlay"></div>
 
-      {/* Dark overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.25)",
-        }}
-      ></div>
+                            {/* Content */}
+                            <div className="hero-content">
 
-      {/* Text */}
-      <div
-        style={{
-          position: "absolute",
-          top: "30%",
-          left: "9%",
-          color: "white",
-          maxWidth: "500px",
-        }}
-      >
-        <h1
-          style={{
-            fontSize: "52px",
-            fontWeight: "700",
-            marginBottom: "15px",
-          }}
-        >
-          {slides[currentSlide].title}
-        </h1>
+                                <div className="hero-text">
 
-        <p
-          style={{
-            fontSize: "30px",
-            lineHeight: "1.1",
-            fontWeight: "500",
-            marginBottom: "45px",
-          }}
-        >
-          {slides[currentSlide].description}
-        </p>
+                                    <h1>
+                                        {slide.title}
+                                    </h1>
 
-        <button
-          style={{
-            backgroundColor: "#ffbd38",
-            border: "none",
-            padding: "15px 20px",
-            borderRadius: "6px",
-            fontSize: "16px",
-            fontWeight: "600",
-            cursor: "pointer",
-          }}
-        >
-          READ MORE
-        </button>
-      </div>
+                                    <div className="orange-line"></div>
 
-      {/* Dots */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "20px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          gap: "8px",
-        }}
-      >
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            style={{
-              width: "15px",
-              height: "15px",
-              borderRadius: "50%",
-              border: "1px solid white",
-              backgroundColor:
-                currentSlide === index ? "white" : "transparent",
-              cursor: "pointer",
-              padding: 0,
-            }}
-          ></button>
-        ))}
-      </div>
-    </div>
-    </div>
-    </div>
-  );
+                                    <p>
+                                        {slide.description}
+                                    </p>
+
+                                    <div className="hero-buttons">
+
+                                        <button>
+                                            READ MORE
+                                        </button>
+
+                                        <a href="#">
+                                            Learn More
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+
+        </section>
+    );
 }
 
 export default HomeHero;

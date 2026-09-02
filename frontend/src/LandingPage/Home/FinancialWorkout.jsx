@@ -70,7 +70,7 @@ function FinancialWorkout() {
         {/* RIGHT SIDE */}
         <div className="col-6">
           <img
-            src="/media/images/slide2.jpg"
+            src="/media/images/financialWorkout.jpeg"
             alt="Financial planning"
             style={{
               position: "absolute",
