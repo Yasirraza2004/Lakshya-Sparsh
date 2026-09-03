@@ -6,37 +6,44 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import "./HomeHero.css";
+import { Link } from "react-router-dom";
 
 const slides = [
     {
         title: "To travel is to live",
         description: "We help you save for meaningful travel experiences",
         image: "/media/images/slide1.png",
+        link: "/wealth"
     },
     {
         title: "Buying your first car?",
         description: "We will help you buy your first car",
         image: "/media/images/slide2.jpeg",
+        link: "/wealth"
     },
     {
         title: "Fund your dream home",
         description: "We love that smile when you talk about your dream home",
         image: "/media/images/slide3.jpeg",
+        link: "/wealth"
     },
     {
         title: "Secure your child's future",
         description: "Let us help you shape your child’s brighter future",
         image: "/media/images/slide4.jpeg",
+        link: "/wealth"
     },
     {
         title: "Make your child's marriage memorable",
         description: "We help you save for the eternal occasion",
         image: "/media/images/slide5.jpeg",
+        link: "/wealth"
     },
     {
         title: "Spend quality time with family",
         description: "Retire Comfortably",
         image: "/media/images/slide6.jpeg",
+        link: "/wealth"
     },
 ];
 
@@ -89,9 +96,10 @@ function HomeHero() {
 
                                     <div className="hero-buttons">
 
-                                        <button>
+                                        <Link to={slide.link} className="read-more">
                                             READ MORE
-                                        </button>
+                                        </Link>
+                                        
 
                                         <a href="#">
                                             Learn More

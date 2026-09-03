@@ -1,0 +1,409 @@
+.portfolio-page {
+    width: 100%;
+    background: white;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   TOP BANNER
+========================= */
+
+.portfolio-banner {
+    width: 100%;
+    height: 210px;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(250, 230, 232, 0.95),
+            rgba(220, 230, 232, 0)
+        ),
+        url("media/images/portfolio.png");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+}
+
+.banner-content {
+    width: 74%;
+    margin: auto;
+}
+
+.banner-content h1 {
+    margin: 0 0 8px;
+
+    font-size: 32px;
+    font-weight: 600;
+    color: #111;
+}
+
+.banner-content p {
+    margin: 0;
+
+    font-size: 18px;
+    color: #111;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.portfolio-container {
+    width: 74%;
+    margin: 37px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* =========================
+   BOTH SECTIONS
+========================= */
+
+.client-section,
+.new-user-section {
+    padding: 0 40px;
+}
+
+.client-section {
+    border-right: 1px solid #ddd;
+}
+
+.new-user-section {
+    padding-left: 38px;
+}
+
+
+.client-section h2,
+.new-user-section h2 {
+    margin: 0 0 10px;
+
+    color: #458ff0;
+
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.user-icon {
+    font-size: 28px;
+    margin-right: 8px;
+}
+
+.section-description {
+    margin: 0 0 20px;
+
+    font-size: 20px;
+    line-height: 1.35;
+
+    color: #111;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-group {
+    position: relative;
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 13px;
+    color: #777;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    height: 40px;
+
+    border: none;
+    border-bottom: 1px solid #aaa;
+
+    outline: none;
+
+    font-size: 16px;
+
+    background: transparent;
+
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-bottom: 2px solid #458ff0;
+}
+
+
+/* =========================
+   EXISTING CLIENT FORM
+========================= */
+
+.client-section > .form-group {
+    margin-bottom: 18px;
+}
+
+.login-options {
+    display: flex;
+    align-items: center;
+
+    gap: 45px;
+
+    margin: 15px 0 25px;
+}
+
+.login-options label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #458ff0;
+
+    font-size: 17px;
+}
+
+.login-options input {
+    width: 22px;
+    height: 22px;
+
+    accent-color: #ffc233;
+}
+
+.login-options .advisor {
+    color: #999;
+}
+
+.login-options a {
+    margin-left: auto;
+
+    color: #458ff0;
+
+    font-size: 17px;
+    font-weight: 600;
+    font-style: italic;
+
+    text-decoration: none;
+}
+
+.login-options a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.secure-login,
+.create-account {
+    width: 100%;
+    height: 62px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #458ff0;
+    color: white;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.secure-login:hover,
+.create-account:hover {
+    background: #2879df;
+}
+
+
+/* =========================
+   NEW USER
+========================= */
+
+.new-user-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px 10px;
+}
+
+.dob-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.new-user-form > .form-group {
+    min-width: 0;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    grid-column: 1 / -1;
+}
+
+.privacy-text {
+    margin: 18px 0;
+
+    color: #555;
+
+    font-size: 15px;
+    font-style: italic;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+    .portfolio-container {
+        width: 90%;
+    }
+
+    .banner-content {
+        width: 90%;
+    }
+
+    .client-section,
+    .new-user-section {
+        padding: 0 20px;
+    }
+
+    .client-section h2,
+    .new-user-section h2 {
+        font-size: 28px;
+    }
+
+    .section-description {
+        font-size: 17px;
+    }
+
+    .login-options {
+        gap: 15px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .portfolio-banner {
+        height: 170px;
+    }
+
+    .banner-content h1 {
+        font-size: 27px;
+    }
+
+    .banner-content p {
+        font-size: 16px;
+    }
+
+    .portfolio-container {
+        width: 90%;
+
+        display: block;
+
+        margin: 30px auto;
+    }
+
+    .client-section {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+
+        padding: 0 0 35px;
+        margin-bottom: 35px;
+    }
+
+    .new-user-section {
+        padding: 0;
+    }
+
+    .new-user-form {
+        display: block;
+    }
+
+    .new-user-form .form-group {
+        margin-bottom: 18px;
+    }
+
+    .dob-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .form-row {
+        display: block;
+    }
+
+    .login-options {
+        flex-wrap: wrap;
+    }
+
+    .login-options a {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .portfolio-banner {
+        height: 140px;
+    }
+
+    .portfolio-container {
+        width: 92%;
+    }
+
+    .client-section h2,
+    .new-user-section h2 {
+        font-size: 25px;
+    }
+
+    .section-description {
+        font-size: 16px;
+    }
+
+    .dob-section {
+        grid-template-columns: 1fr;
+    }
+
+    .login-options {
+        gap: 15px;
+    }
+
+    .secure-login,
+    .create-account {
+        height: 55px;
+        font-size: 16px;
+    }
+}

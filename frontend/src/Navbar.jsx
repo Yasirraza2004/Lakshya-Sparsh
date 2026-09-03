@@ -1,4 +1,5 @@
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
@@ -18,13 +19,13 @@ function Navbar() {
                     <a href="#">About us</a>
                     <a href="#">Start Investing</a>
                     <a href="#">NRI Corner</a>
-                    <a href="#">Downloads</a>
-                    <a href="#">Gallery</a>
-                    <a href="#">Contact Us</a>
+                    <Link to="/downloads">Downloads</Link>
+                    <Link to="/gallery">Gallery</Link>
+                    <Link to="/contact">Contact Us</Link>
 
-                    <button className="login-btn">
+                    <Link to="/login" className="login-btn">
                         Login
-                    </button>
+                    </Link>
                 </div>
 
             </div>

@@ -121,15 +121,14 @@
     margin-top: 30px;
 }
 
-.hero-buttons button {
+.read-more {
     border: none;
 
     padding: 18px 35px;
 
     border-radius: 35px;
 
-    background: #f5eee6;
-    color: #111;
+    background: #458ff0;
 
     font-size: 16px;
     font-weight: 600;
@@ -139,7 +138,7 @@
     transition: 0.3s;
 }
 
-.hero-buttons button:hover {
+.read-more:hover {
     transform: translateY(-2px);
 }
 
