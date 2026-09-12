@@ -95,16 +95,9 @@ function HomeHero() {
                                     </p>
 
                                     <div className="hero-buttons">
-
                                         <Link to={slide.link} className="read-more">
                                             READ MORE
                                         </Link>
-                                        
-
-                                        <a href="#">
-                                            Learn More
-                                        </a>
-
                                     </div>
 
                                 </div>

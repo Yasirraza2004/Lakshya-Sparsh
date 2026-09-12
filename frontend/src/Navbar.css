@@ -27,12 +27,17 @@
 .navbar-logo {
     display: flex;
     align-items: center;
+    width: 300px;
+    height: 90px;
+    overflow: hidden;
 }
 
 .navbar-logo img {
-    width: 270px;
+    width: 330px;
     height: auto;
     display: block;
+    margin-top: 35px;
+    
 }
 
 /* Menu */

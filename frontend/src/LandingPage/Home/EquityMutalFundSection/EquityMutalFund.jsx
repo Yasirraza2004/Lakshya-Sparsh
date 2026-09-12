@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function EquityMutalFund() {
   return (
     <>
@@ -28,7 +30,7 @@ function EquityMutalFund() {
             Taking risk with <b>Equity Mutual Fund</b>
           </p>
           <p style={{ fontSize: "25px", marginTop: "-7px" }}>
-            is necessary & essential for good portfolio
+            is necessary & essential for getting Inflation Beating Returns
           </p>
 
           <div
@@ -39,7 +41,7 @@ function EquityMutalFund() {
               marginTop: "40px",
             }}
           >
-            <a href="#" className="fund-card">
+            <Link to="/large_cap_fund" className="fund-card">
               <i
                 className="fa-solid fa-chart-pie"
                 style={{
@@ -58,9 +60,9 @@ function EquityMutalFund() {
                   Large Cap Fund
                 </p>
               </i>
-            </a>
+            </Link>
 
-            <a href="#" className="fund-card">
+            <Link to="/thematic_fund" className="fund-card">
               <i
                 className="fa-solid fa-trowel-bricks"
                 style={{ color: "#4285e8", fontSize: "90px" }}
@@ -76,9 +78,9 @@ function EquityMutalFund() {
                   Thematic Fund
                 </p>
               </i>
-            </a>
+            </Link>
 
-            <a href="#" className="fund-card">
+            <Link to="/multi_cap_fund" className="fund-card">
               <i
                 className="fa-solid fa-chart-line"
                 style={{ color: "#4285e8", fontSize: "100px" }}
@@ -94,9 +96,9 @@ function EquityMutalFund() {
                   Multi Cap Fund
                 </p>
               </i>
-            </a>
+            </Link>
 
-            <a href="#" className="fund-card">
+            <Link to="/mid_cap_fund" className="fund-card">
               <i
                 className="fa-solid fa-chart-column"
                 style={{ color: "#4285e8", fontSize: "100px" }}
@@ -112,9 +114,9 @@ function EquityMutalFund() {
                   Mid Cap Fund
                 </p>
               </i>
-            </a>
+            </Link>
 
-            <a href="#" className="fund-card">
+            <Link to="/small_cap_fund" className="fund-card">
               <i
                 className="fa-solid fa-chart-pie"
                 style={{ color: "#4285e8", fontSize: "100px" }}
@@ -130,7 +132,7 @@ function EquityMutalFund() {
                   Small Cap Fund
                 </p>
               </i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ function Wealth() {
     const [goalName, setGoalName] = useState("");
 
     const [goalAmount, setGoalAmount] = useState(5000000);
-    const [currentSavings, setCurrentSavings] = useState(100000);
+    const [currentSavings, setCurrentSavings] = useState("100000");
 
     const [years, setYears] = useState(15);
     const [returnRate, setReturnRate] = useState(12);

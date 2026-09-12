@@ -16,9 +16,9 @@ function Navbar() {
 
                 {/* Menu */}
                 <div className="navbar-menu">
-                    <a href="#">About us</a>
-                    <a href="#">Start Investing</a>
-                    <a href="#">NRI Corner</a>
+                    <Link to="/about">About Us</Link>
+                    <Link to="/start">Start Investing</Link>
+                    <Link to="/nri">NRI Corner</Link>
                     <Link to="/downloads">Downloads</Link>
                     <Link to="/gallery">Gallery</Link>
                     <Link to="/contact">Contact Us</Link>

@@ -1,10 +1,10 @@
-import AddressSection from "./AddressSection";
-import DebtFunds from "./DebtFunds";
-import EquityMutalFund from "./EquityMutalFund";
-import Feedback from "./Feedback";
-import FinancialWorkout from "./FinancialWorkout";
-import HomeHero from "./HomeHero";
-import InvestingRule from "./InvestingRule";
+import AddressSection from "./AddressSection/AddressSection";
+import DebtFunds from "./DebtFundsSection/DebtFunds";
+import EquityMutalFund from "./EquityMutalFundSection/EquityMutalFund";
+import Feedback from "./FeedbackSection/Feedback";
+import FinancialWorkout from "./FinancialWorkoutSection/FinancialWorkout";
+import HomeHero from "./HomeHeroSection/HomeHero";
+import InvestingRule from "./RuleofInvestingSection/InvestingRule";
 import Services from "./Services";
 
 function HomePage() {

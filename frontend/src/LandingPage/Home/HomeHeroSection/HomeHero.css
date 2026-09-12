@@ -117,7 +117,6 @@
 .hero-buttons {
     display: flex;
     align-items: center;
-    gap: 25px;
     margin-top: 30px;
 }
 
@@ -136,20 +135,14 @@
     cursor: pointer;
 
     transition: 0.3s;
+    color: white;
+    text-decoration: none;
 }
 
 .read-more:hover {
     transform: translateY(-2px);
 }
 
-.hero-buttons a {
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 16px;
-    font-weight: 500;
-}
 
 /* =========================
    SWIPER ARROWS

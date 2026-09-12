@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
+
 function Services() {
   return (
     <div className="container mt-5 mb-5">
-      
       {/* Heading */}
       <div className="text-center mb-5">
         <h3>Services We Provide</h3>
@@ -22,14 +23,11 @@ function Services() {
       >
         {/* 1 */}
         <div className="col-3 mt-3">
-          <a href="#">
-            <i
-              className="fa-solid fa-wallet"
-              style={{ fontSize: "60px" }}
-            ></i>
+          <Link to="/about" style={{ textDecoration: "none" }}>
+            <i className="fa-solid fa-wallet" style={{ fontSize: "60px" }}></i>
 
-          <h6 className="mt-4">Financial Services</h6>
-          </a>
+            <h6 className="mt-4">Financial Services</h6>
+          </Link>
 
           <p>
             We offer several services to cater
@@ -42,15 +40,14 @@ function Services() {
 
         {/* 2 */}
         <div className="col-3 mt-3">
-          <a href="#">
+          <Link to="/wealth" style={{ textDecoration: "none" }}>
             <i
               className="fa-solid fa-bullseye"
               style={{ fontSize: "60px" }}
             ></i>
-          
 
-          <h6 className="mt-4">Goal Based Investment</h6>
-          </a>
+            <h6 className="mt-4">Goal Based Investment</h6>
+          </Link>
 
           <p>
             We help to achieve your long term
@@ -63,14 +60,11 @@ function Services() {
 
         {/* 3 */}
         <div className="col-3 mt-3">
-          <a href="#">
-            <i
-              className="fa-solid fa-file"
-              style={{ fontSize: "60px" }}
-            ></i>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <i className="fa-solid fa-file" style={{ fontSize: "60px" }}></i>
 
-          <h6 className="mt-4">Smart Tax Saving</h6>
-          </a>
+            <h6 className="mt-4">Smart Tax Saving</h6>
+          </Link>
 
           <p>
             Invest in Equity Linked Saving
@@ -83,15 +77,14 @@ function Services() {
 
         {/* 4 */}
         <div className="col-3 mt-3">
-          <a href="#">
+          <Link to="/" style={{ textDecoration: "none" }}>
             <i
               className="fa-solid fa-house-flood-water-circle-arrow-right"
               style={{ fontSize: "60px" }}
             ></i>
 
-
-          <h6 className="mt-4">Insurance Services</h6>
-           </a>
+            <h6 className="mt-4">Insurance Services</h6>
+          </Link>
 
           <p>
             The plan which provides extra

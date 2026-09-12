@@ -77,18 +77,17 @@ function AddressSection() {
               </b>
             </p>
             <p>
-              <i class="fa-solid fa-location-dot pe-4 ms-1"></i>Flat No. 63, 6th
-              floor, Vaibhav Apartment,
+              <i class="fa-solid fa-location-dot pe-4 ms-1"></i>Flat No. 63, 6th Floor, Vaibhav Apartment,
               <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Near Ashoka Cinema, Patna
-              800001, Bihar
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Opposite Iskcon Temple, Budh Marg, Patna,<br /> 
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;800001 
             </p>
             <p>
               <i class="fa-solid fa-phone pe-4 ms-1"></i>+91-926 273 7373,
               +91-983 507 0564
             </p>
             <p>
-              <i class="fa-solid fa-envelope pe-4 ms-1"></i>laksyahan@gmail.com
+              <i class="fa-solid fa-envelope pe-4 ms-1"></i> lakshyasparsh1@gmail.com
             </p>
           </div>
 

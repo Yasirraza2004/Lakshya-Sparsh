@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function DebtFunds() {
   const cards = [
     {
@@ -9,7 +11,7 @@ function DebtFunds() {
           Funds
         </>
       ),
-      link: "/liquid-funds.html",
+      link: "/liquid_funds",
     },
     {
       icon: "fa-sack-dollar",
@@ -20,7 +22,7 @@ function DebtFunds() {
           debt funds
         </>
       ),
-      link: "/long-term-debt-funds.html",
+      link: "/long_term_debt_funds",
     },
     {
       icon: "fa-hand-holding-dollar",
@@ -31,7 +33,7 @@ function DebtFunds() {
           hybrid funds
         </>
       ),
-      link: "/conservative-hybrid-funds.html",
+      link: "/hybrid_funds",
     },
   ];
 
@@ -96,10 +98,10 @@ function DebtFunds() {
               }}
             >
               {cards.map((card, index) => (
-                <a
+                <Link
                   key={index}
+                  to={card.link}
                   className="fund-card"
-                  href={card.link}
                   style={{
                     width: "170px",
                     height: "160px",
@@ -141,26 +143,28 @@ function DebtFunds() {
                   >
                     {card.title}
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
 
-          <div className="col-5 mt-5"
-          style={{
-            position:"relative",
-          }}>
+          <div
+            className="col-5 mt-5"
+            style={{
+              position: "relative",
+            }}
+          >
             <img
               src="/media/images/DebtFund.jpeg"
               alt="logo"
-              style={{ width: "80%"}}
+              style={{ width: "80%" }}
             />
             {/* TOP LEFT YELLOW CORNER */}
             <div
               style={{
                 position: "absolute",
                 top: "-17px",
-                left:"-5px",
+                left: "-5px",
                 width: "95px",
                 height: "12px",
                 backgroundColor: "white",
