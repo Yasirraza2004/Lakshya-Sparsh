@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./SIPCalculator.css";
+import "./sipCalculator.css";
 
 function SIPCalculator() {
   const [monthlyInvestment, setMonthlyInvestment] = useState(5000);
