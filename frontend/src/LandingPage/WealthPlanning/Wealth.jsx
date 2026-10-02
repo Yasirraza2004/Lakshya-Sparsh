@@ -10,7 +10,7 @@ function Wealth() {
 
     const [years, setYears] = useState(15);
     const [returnRate, setReturnRate] = useState(12);
-    const [inflation, setInflation] = useState(6);
+    const [inflation, setInflation] = useState(7);
 
     const goals = [
         "Retirement",
@@ -408,6 +408,7 @@ function Wealth() {
             </div>
 
         </section>
+        
     );
 }
 

@@ -1,140 +1,230 @@
 import "./Login.css";
+import { useState } from "react";
+
 
 function Login() {
+  // Create Account states
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [dob, setDob] = useState("");
+
+  // Login states
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+
   return (
-    <div className="portfolio-page">
-      {/* Header Banner */}
-      <section className="portfolio-banner">
-        <div className="banner-content">
-          <h1>Portfolio Tracker</h1>
-          <p>Home / Portfolio Tracker</p>
-        </div>
-      </section>
+    <div className="auth-page">
 
-      {/* Main Content */}
-      <section className="portfolio-container">
-        {/* Existing Client */}
-        <div className="client-section">
-          <h2>
-            <span className="user-icon"><i class="fa-solid fa-user"></i></span>
-            Existing Clients
-          </h2>
+      {/* ================= CREATE ACCOUNT ================= */}
 
-          <p className="section-description">
-            Manage your existing Portfolio in terms of tracking and transaction
-          </p>
+      <div className="auth-container signup-container">
 
-          <div className="form-group">
-            <label>Login ID</label>
-            <input type="text" />
+        <div className="auth-content">
+
+          <div className="auth-header">
+            <h1>Create Account</h1>
+
+            <p>
+              Start your financial journey with Lakshya Sparsh
+            </p>
           </div>
 
-          <div className="form-group">
-            <label>Password</label>
-            <input type="password" />
-          </div>
+          <form>
 
-          <div className="login-options">
-            <label>
-              <input type="radio" name="userType" defaultChecked />
-              <span>Clients</span>
-            </label>
+            {/* Full Name */}
 
-            <label>
-              <input type="radio" name="userType" />
-              <span className="advisor">Advisor</span>
-            </label>
-
-            <a href="#">Trouble Loging in?</a>
-          </div>
-
-          <button className="secure-login"><i class="fa-solid fa-lock"></i> Secure Login</button>
-        </div>
-
-        {/* New User */}
-        <div className="new-user-section">
-          <h2>
-            <span className="user-icon"><i class="fa-solid fa-user-plus"></i></span>
-            New User
-          </h2>
-
-          <p className="section-description">
-            Quickly register with us and start enjoying various free services
-            like Financial Planning, Portfolio Tracking etc.
-          </p>
-
-          <div className="new-user-form">
             <div className="form-group">
-              <label>Name</label>
-              <input type="text" />
+              <label htmlFor="name">
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
             </div>
 
-            <div className="dob-section">
-              <div className="form-group">
-                <label>DOB- Date</label>
-                <select>
-                  <option value="">Year</option>
-                  {Array.from({ length: 76 }, (_, i) => {
-                    const year = new Date().getFullYear() - i;
-                    return (
-                      <option key={year} value={year}>
-                        {year}
-                      </option>
-                    );
-                  })}
-                </select>
-              </div>
 
-              <div className="form-group">
-                <label>Month</label>
-                <select>
-                  <option value="">Month</option>
-                  {Array.from({ length: 12 }, (_, i) => (
-                    <option key={i + 1} value={i + 1}>
-                      {new Date(2000, i).toLocaleString("en", {
-                        month: "long",
-                      })}
-                    </option>
-                  ))}
-                </select>
-              </div>
+            {/* Phone Number */}
 
-              <div className="form-group">
-                <label>Date</label>
-                <select>
-                  <option value="">Date</option>
-                  {Array.from({ length: 31 }, (_, i) => (
-                    <option key={i + 1} value={i + 1}>
-                      {i + 1}
-                    </option>
-                  ))}
-                </select>
-              </div>
+            <div className="form-group">
+              <label htmlFor="phone">
+                Phone Number
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter phone number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
             </div>
 
-            <div className="form-row">
-              <div className="form-group">
-                <label>Email Id</label>
-                <input type="email" />
-              </div>
 
-              <div className="form-group">
-                <label>Mobile</label>
-                <input type="tel" />
-              </div>
+            {/* Date of Birth */}
+
+            <div className="form-group">
+              <label htmlFor="dob">
+                Date of Birth
+              </label>
+
+              <input
+                type="date"
+                id="dob"
+                name="dob"
+                value={dob}
+                max={new Date().toISOString().split("T")[0]}
+                onChange={(e) => setDob(e.target.value)}
+                required
+              />
             </div>
+
+
+            {/* Email */}
+
+            <div className="form-group">
+              <label htmlFor="email">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+
+
+            {/* Password */}
+
+            <div className="form-group">
+              <label htmlFor="password">
+                Password
+              </label>
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Create a password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+
+
+            {/* Create Account Button */}
+
+            <button
+              type="submit"
+              className="auth-btn"
+            >
+              Create Account
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+
+      {/* ================= LOGIN ================= */}
+
+      <div className="auth-container login-container">
+
+        <div className="auth-content login-content">
+
+          <div className="auth-header">
+            <h1>Welcome Back</h1>
+
+            <p>
+              Login to continue your financial journey
+            </p>
           </div>
 
-          <p className="privacy-text">
-            Your data will private and secure with us it will not use for any
-            further marketing purpose.
-          </p>
+          <form>
 
-          <button className="create-account"><i class="fa-solid fa-lock"></i> Create your account now</button>
+            {/* Email */}
+
+            <div className="form-group">
+              <label htmlFor="loginEmail">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="loginEmail"
+                name="loginEmail"
+                placeholder="Enter your email"
+                value={loginEmail}
+                onChange={(e) => setLoginEmail(e.target.value)}
+                required
+              />
+            </div>
+
+
+            {/* Password */}
+
+            <div className="form-group">
+              <label htmlFor="loginPassword">
+                Password
+              </label>
+
+              <input
+                type="password"
+                id="loginPassword"
+                name="loginPassword"
+                placeholder="Enter your password"
+                value={loginPassword}
+                onChange={(e) => setLoginPassword(e.target.value)}
+                required
+              />
+            </div>
+
+
+            {/* Forgot Password */}
+
+            <div className="forgot-password">
+              <span>
+                Forgot Password?
+              </span>
+            </div>
+
+
+            {/* Login Button */}
+
+            <button
+              type="submit"
+              className="auth-btn"
+            >
+              Login
+            </button>
+
+          </form>
+
         </div>
-      </section>
+
+      </div>
+
     </div>
   );
 }
 
 export default Login;
+

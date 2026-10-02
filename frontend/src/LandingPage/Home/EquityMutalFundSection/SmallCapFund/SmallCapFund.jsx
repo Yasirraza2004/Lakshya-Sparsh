@@ -1,166 +1,112 @@
+import PreFooter from "../../../PreFooter";
 import "./SmallCapFund.css";
 
 function SmallCapFund() {
-
-    return (
-        <div className="small-cap-page">
-
-            {/* =========================
+  return (
+    <>
+      <div className="small-cap-page">
+        {/* =========================
                 SMALL CAP FUND SECTION
             ========================= */}
 
-            <section className="small-cap-section">
+        <section className="small-cap-section">
+          <div className="small-cap-container">
+            {/* TITLE */}
 
-                <div className="small-cap-container">
+            <h1 className="small-cap-title">Small Cap Fund</h1>
 
-                    {/* TITLE */}
-
-                    <h1 className="small-cap-title">
-                        Small Cap Fund
-                    </h1>
-
-
-                    {/* =========================
+            {/* =========================
                         FEATURES
                     ========================= */}
 
-                    <div className="small-cap-features">
+            <div className="small-cap-features">
+              {/* FEATURE 1 */}
 
+              <div className="small-cap-feature">
+                <div className="small-feature-image">
+                  <img
+                    src="/media/images/different-sector.jpeg"
+                    alt="Small Sized Companies"
+                  />
+                </div>
 
-                        {/* FEATURE 1 */}
+                <p>They invest in small-sized companies.</p>
+              </div>
 
-                        <div className="small-cap-feature">
+              {/* FEATURE 2 */}
 
-                            <div className="small-feature-image">
+              <div className="small-cap-feature">
+                <div className="small-feature-image">
+                  <img
+                    src="/media/images/Thematic-Fund.jpeg"
+                    alt="Investment Horizon"
+                  />
+                </div>
 
-                                <img
-                                    src="/media/images/different-sector.jpeg"
-                                    alt="Small Sized Companies"
-                                />
+                <p>
+                  Investment horizon should be 7-10
+                  <br />
+                  years to generate returns according to your expectations.
+                </p>
+              </div>
 
-                            </div>
+              {/* FEATURE 3 */}
 
-                            <p>
-                                They invest in small-sized companies.
-                            </p>
+              <div className="small-cap-feature">
+                <div className="small-feature-image">
+                  <img src="/media/images/risk.jpeg" alt="Aggressive Growth" />
+                </div>
 
-                        </div>
+                <p>
+                  Suitable for investor who can tolerate more risk and are
+                  looking for more aggressive growth.
+                </p>
+              </div>
+            </div>
 
-
-                        {/* FEATURE 2 */}
-
-                        <div className="small-cap-feature">
-
-                            <div className="small-feature-image">
-
-                                <img
-                                    src="/media/images/Thematic-Fund.jpeg"
-                                    alt="Investment Horizon"
-                                />
-
-                            </div>
-
-                            <p>
-                                Investment horizon should be 7-10
-                                <br />
-                                years to generate returns according to
-                                <br />
-                                your expectations.
-                            </p>
-
-                        </div>
-
-
-                        {/* FEATURE 3 */}
-
-                        <div className="small-cap-feature">
-
-                            <div className="small-feature-image">
-
-                                <img
-                                    src="/media/images/risk.jpeg"
-                                    alt="Aggressive Growth"
-                                />
-
-                            </div>
-
-                            <p>
-                                Suitable for investor who can tolerate
-                                <br />
-                                more risk and are looking for more
-                                <br />
-                                aggressive growth.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    {/* =========================
+            {/* =========================
                         BENEFITS
                     ========================= */}
 
-                    <div className="small-cap-benefits">
+            <div className="small-cap-benefits">
+              <h3>
+                <span className="small-benefit-icon">❗</span>
+                Benefits of investing in small cap funds
+              </h3>
 
-                        <h3>
+              <ul>
+                <li>Small cap stocks are priced lower than mid cap stocks.</li>
 
-                            <span className="small-benefit-icon">
-                                ❗
-                            </span>
+                <li>Small cap funds help to diversify your portfolio.</li>
 
-                            Benefits of investing in small cap funds
+                <li>Small cap funds give high growth potential in long run.</li>
 
-                        </h3>
+                <li>
+                  SIP is the best route for small cap funds to create wealth
+                  with maximum returns.
+                </li>
+              </ul>
+            </div>
 
-
-                        <ul>
-
-                            <li>
-                                Small cap stocks are priced lower than mid cap stocks.
-                            </li>
-
-                            <li>
-                                Small cap funds help to diversify your portfolio.
-                            </li>
-
-                            <li>
-                                Small cap funds give high growth potential in long run.
-                            </li>
-
-                            <li>
-                                SIP is the best route for small cap funds to create wealth
-                                with maximum returns.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                    {/* =========================
+            {/* =========================
                         INVEST BUTTON
                     ========================= */}
 
-                    <div className="small-cap-button">
+            <div className="small-cap-button">
+              <button
+                type="button"
+                onClick={() => (window.location.href = "/start-investing")}
+              >
+                Invest Now
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
 
-                        <button
-                            type="button"
-                            onClick={() =>
-                                window.location.href = "/start-investing"
-                            }
-                        >
-                            Invest Now
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-        </div>
-    );
+      <PreFooter />
+    </>
+  );
 }
 
 export default SmallCapFund;

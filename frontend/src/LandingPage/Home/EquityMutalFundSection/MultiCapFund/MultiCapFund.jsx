@@ -1,8 +1,10 @@
+import PreFooter from "../../../PreFooter";
 import "./MultiCapFund.css";
 
 function MultiCapFund() {
 
     return (
+        <>
         <div className="multi-cap-page">
 
             {/* =========================
@@ -160,6 +162,9 @@ function MultiCapFund() {
             </section>
 
         </div>
+        
+        <PreFooter />
+        </>
     );
 }
 

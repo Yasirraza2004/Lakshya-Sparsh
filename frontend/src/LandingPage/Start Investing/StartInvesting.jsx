@@ -1,32 +1,43 @@
+import { Link } from 'react-router-dom';
+import PreFooter from '../PreFooter';
+
 function StartInvesting() {
   return (
     <>
       <style>
         {`
-          .investing-page {
+          .mf-page {
             font-family: sans-serif;
             color: #222;
+            min-height: 80vh; 
+            display: flex;
+            flex-direction: column;
           }
 
-          /* Hero Section */
-          .investing-hero {
+          /* Hero Section (Background Image) */
+          .mf-hero {
             width: 100%;
-            background-color: #3b4b5a; /* Dark slate background from your image */
+            background-color: #3b4b5a; 
+            /* Here goes the dark background image */
+            background-image: url('/media/images/mf-banner-bg.png'); 
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 50px 10%;
             box-sizing: border-box;
-            min-height: 300px;
+            min-height: 350px;
           }
 
           .hero-text {
             color: white;
-            max-width: 60%;
+            flex: 1;
+            max-width: 55%;
           }
 
           .hero-text h1 {
-            font-size: 64px;
+            font-size: 55px;
             font-weight: 600;
             margin: 0 0 10px 0;
             letter-spacing: 1px;
@@ -43,21 +54,30 @@ function StartInvesting() {
             color: #ffc107; /* Yellow text */
           }
 
-          /* Placeholder for the signpost graphic */
-          .hero-graphic-placeholder {
-            width: 300px;
-            height: 250px;
-            background-color: rgba(255, 255, 255, 0.1);
+          /* Right side foreground image (Signpost) */
+          .hero-graphic {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            max-width: 45%;
+          }
+
+          .hero-graphic img {
+            max-width: 100%;
+            height: auto;
+            max-height: 280px; /* Keeps the signpost from getting too big */
+            object-fit: contain;
           }
 
           /* Split Content Section */
           .split-section {
             width: 90%;
             max-width: 1200px;
-            margin: 60px auto;
+            margin: 80px auto;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex: 1; 
           }
 
           .split-column {
@@ -69,12 +89,11 @@ function StartInvesting() {
             padding: 0 40px;
           }
 
-          /* Placeholders for graduation cap and tool icons */
-          .icon-placeholder {
+          .split-icon {
             width: 100px;
             height: 100px;
-            background-color: #e8e8e8;
             margin-bottom: 30px;
+            object-fit: contain;
           }
 
           .split-column p {
@@ -82,11 +101,12 @@ function StartInvesting() {
             font-weight: 600;
             line-height: 1.5;
             margin-bottom: 40px;
-            min-height: 60px; /* Keeps buttons aligned even if text wraps differently */
+            min-height: 60px;
+            color: #111;
           }
 
           .split-btn {
-            background-color: #458ff0; /* Theme blue */
+            background-color: #458ff0; 
             color: white;
             border: none;
             padding: 12px 25px;
@@ -94,13 +114,14 @@ function StartInvesting() {
             border-radius: 4px;
             cursor: pointer;
             transition: background 0.3s;
+            text-decoration: none;
           }
 
           .split-btn:hover {
-            background-color: #357ae8;
+            background-color: #ffc107; /* Yellow Hover */
+            color: #111;
           }
 
-          /* The vertical divider with "Or" */
           .divider {
             position: relative;
             width: 1px;
@@ -119,49 +140,63 @@ function StartInvesting() {
             border-radius: 50%;
             position: absolute;
           }
+
+          /* Pre-Footer */
+          .pre-footer-wrapper {
+            width: 90%;
+            max-width: 1500px;
+            margin: 40px auto 30px auto;
+            padding-top: 25px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .pre-footer-links { display: flex; gap: 30px; }
+          .pre-footer-links a { color: #555; text-decoration: none; font-size: 14px; }
+          .pre-footer-socials { display: flex; gap: 15px; color: #999; font-size: 18px; }
         `}
       </style>
 
-      <div className="investing-page">
+      <div className="mf-page">
         {/* Hero Section */}
-        <div className="investing-hero">
+        <div className="mf-hero">
           <div className="hero-text">
             <h1>Mutual Funds</h1>
             <h2>are the best Investment Vehicle</h2>
             <h2 className="highlight">To reach all your Financial destination</h2>
           </div>
-          <div className="hero-graphic-placeholder">
-            {/* Add your signpost image here later */}
+          
+          {/* Signpost Image on Top of Background */}
+          <div className="hero-graphic">
+            <img src="/media/images/mf-signpost.png" alt="Financial Destinations Signpost" />
           </div>
         </div>
 
         {/* Main Split Section */}
         <div className="split-section">
           
-          {/* Left Side */}
           <div className="split-column">
-            <div className="icon-placeholder">
-              {/* Add your Graduation Cap icon here */}
-            </div>
+            <img src="/media/images/grad-cap.png" alt="Learn" className="split-icon" />
             <p>If you are new to Mutual Funds<br />and wish to learn before investing</p>
-            <button className="split-btn">Click here &#10140;</button>
+            <Link to="/knowledge_center" className="split-btn">Click here &#10140;</Link>
           </div>
 
-          {/* Center Divider */}
           <div className="divider">
             <span className="divider-text">Or</span>
           </div>
 
-          {/* Right Side */}
           <div className="split-column">
-            <div className="icon-placeholder">
-              {/* Add your User Tools icon here */}
-            </div>
+            <img src="/media/images/tools-icon.png" alt="Tools" className="split-icon" />
             <p>If you are aware about Mutual Funds<br />then use our fund selector tools</p>
-            <button className="split-btn">Start here &#10140;</button>
+            <Link to="/fundselector" className="split-btn">Start here &#10140;</Link>
           </div>
 
         </div>
+
+        {/* Bottom Links (Pre-Footer) */}
+        <PreFooter />
+
       </div>
     </>
   );

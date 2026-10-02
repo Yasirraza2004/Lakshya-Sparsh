@@ -35,32 +35,32 @@ function AddressSection() {
             <h4 style={{ marginLeft: "30px", color:"#458FF0" }}>Useful links</h4>
             <ul style={{ listStyle: "none", lineHeight: "3" }}>
               <li>
-                <a href="#" className="useful-links" style={{ textDecoration: "none" }}>
+                <a href="/about" className="useful-links" style={{ textDecoration: "none" }}>
                   <i class="fa-solid fa-arrow-right small" style={{color:"black"}}></i>&nbsp;&nbsp;About us
                 </a>
               </li>
 
               <li>
-                <a href="#" className="useful-links" style={{ textDecoration:"none" }}>
+                <a href="/knowledge_center/smart_tax_planning" className="useful-links" style={{ textDecoration:"none" }}>
                   <i class="fa-solid fa-arrow-right small" style={{color:"black"}}></i>&nbsp;&nbsp;Taxation
                 </a>
               </li>
 
               <li>
-                <a href="#" className="useful-links" style={{ textDecoration: "none" }}>
+                <a href="/sip_calculator" className="useful-links" style={{ textDecoration: "none" }}>
                   <i class="fa-solid fa-arrow-right small" style={{color:"black"}}></i>&nbsp;&nbsp;Tools &
                   Calculators
                 </a>
               </li>
 
               <li>
-                <a href="#" className="useful-links" style={{ textDecoration: "none" }}>
+                <a href="/knowledge_center" className="useful-links" style={{ textDecoration: "none" }}>
                   <i class="fa-solid fa-arrow-right small" style={{color:"black"}}></i>&nbsp;&nbsp;Mutual fund guide
                 </a>
               </li>
 
               <li>
-                <a href="#" className="useful-links" style={{ textDecoration: "none" }}>
+                <a href="/downloads" className="useful-links" style={{ textDecoration: "none" }}>
                   <i class="fa-solid fa-arrow-right small" style={{color:"black"}}></i>&nbsp;&nbsp;Download forms
                 </a>
               </li>
@@ -91,9 +91,9 @@ function AddressSection() {
             </p>
           </div>
 
-          <div className="col-4 mb-5">
+          <div className="col-4">
             <form>
-              <h3 className="mb-4 ms-5" style={{color:"#458FF0"}}>Request Help</h3>
+              <h3 className="ms-5" style={{color:"#458FF0"}}>Request Help</h3>
               <div className="ms-5">
                 <input type="text" placeholder="Your name" />
                 <br />
@@ -119,26 +119,6 @@ function AddressSection() {
                 </button>
               </div>
             </form>
-          </div>
-          <hr />
-          <div className="mt-3" style={{ display: "flex" }}>
-            <div className="col-6 effect">
-              <a href="#">Check mail</a>
-              <a href="#">Disclaimer</a>
-              <a href="#">Commission Disclosure</a>
-            </div>
-            <div
-              className="col-6 social-icons">
-              <a href="#" style={{ color: "black" }}>
-                <i class="fa-brands fa-facebook"></i>
-              </a>
-              <a href="#" style={{ color: "black" }}>
-                <i class="fa-brands fa-square-x-twitter"></i>
-              </a>
-              <a href="#" style={{ color: "black" }}>
-                <i class="fa-brands fa-square-linkedin"></i>
-              </a>
-            </div>
           </div>
         </div>
       </div>

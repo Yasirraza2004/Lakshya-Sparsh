@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+import PreFooter from '../PreFooter';
+
 function AboutUs() {
   return (
     <>
@@ -8,30 +11,37 @@ function AboutUs() {
             color: #222;
           }
 
-          .about-hero-placeholder {
+          /* Banner with Background Image */
+          .about-hero {
             width: 100%;
-            height: 220px;
-            background-color: #458ff0; 
+            height: 250px;
+            background-image: url('/media/images/about-banner.png');
+            background-color: #458ff0; /* Fallback color */
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 32px;
-            font-weight: bold;
+            font-weight: 500;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
           }
 
+          /* Padding and max-width for better left/right spacing */
           .about-content {
             width: 90%;
-            max-width: 1500px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 0;
+            padding: 50px 20px;
             line-height: 1.8;
           }
 
           .about-content p {
             margin-bottom: 20px;
-            font-size: 16px;
+            font-size: 15px;
             text-align: justify;
+            color: #333;
           }
 
           .services-heading {
@@ -54,20 +64,45 @@ function AboutUs() {
             justify-content: center; 
           }
 
+          /* Card Styling updated for <Link> */
           .service-card {
             position: relative;
+            display: block; /* Important for Link tags */
             width: calc(33.333% - 25px);
             min-width: 300px; 
             height: 200px;
-            border-radius: 4px;
+            border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            cursor: pointer;
+            text-decoration: none; /* Removes underline from links */
           }
 
-          .service-img-placeholder {
+          /* Added transition for smooth zoom effect */
+          .card-img {
             width: 100%;
             height: 100%;
-            background-color: #e8e8e8; 
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease-in-out; 
+          }
+
+          /* Zoom in the image when hovering over the card */
+          .service-card:hover .card-img {
+            transform: scale(1.1);
+          }
+
+          /* Dark gradient over the image */
+          .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 60%);
+            z-index: 1;
+            /* Prevents the overlay from blocking the hover trigger */
+            pointer-events: none; 
           }
 
           .service-card h3 {
@@ -79,15 +114,16 @@ function AboutUs() {
             color: white;
             font-size: 20px;
             font-weight: 500;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.8); 
             margin: 0;
             z-index: 2;
+            pointer-events: none;
           }
         `}
       </style>
 
       <div className="about-page">
-        <div className="about-hero-placeholder">
+        {/* Banner */}
+        <div className="about-hero">
           <h1>About Us</h1>
         </div>
 
@@ -106,29 +142,42 @@ function AboutUs() {
           <p className="services-subtext">Below are the service offered by us to help you in investing for your various stages of your life so that you can live your life freely</p>
 
           <div className="services-grid">
-            <div className="service-card">
-              <div className="service-img-placeholder"></div>
+            
+            <Link to="/wealth" className="service-card">
+              <img src="/media/images/financial-planning.png" alt="Financial Planning" className="card-img" />
+              <div className="card-overlay"></div>
               <h3>Financial Planning</h3>
-            </div>
-            <div className="service-card">
-              <div className="service-img-placeholder"></div>
+            </Link>
+            
+            <Link to="/start" className="service-card">
+              <img src="/media/images/mutual-fund.png" alt="Mutual Fund" className="card-img" />
+              <div className="card-overlay"></div>
               <h3>Mutual Fund</h3>
-            </div>
-            <div className="service-card">
-              <div className="service-img-placeholder"></div>
+            </Link>
+            
+            <Link to="/elss" className="service-card">
+              <img src="/media/images/tax-planning.png" alt="Tax Planning" className="card-img" />
+              <div className="card-overlay"></div>
               <h3>Tax Planning</h3>
-            </div>
-            <div className="service-card">
-              <div className="service-img-placeholder"></div>
+            </Link>
+            
+            <Link to="/insurance/life_insurance" className="service-card">
+              <img src="/media/images/life-insurance.png" alt="Life Insurance" className="card-img" />
+              <div className="card-overlay"></div>
               <h3>Life Insurance</h3>
-            </div>
-            <div className="service-card">
-              <div className="service-img-placeholder"></div>
+            </Link>
+            
+            <Link to="/general_insurance" className="service-card">
+              <img src="/media/images/general-insurance.png" alt="General Insurance" className="card-img" />
+              <div className="card-overlay"></div>
               <h3>General Insurance</h3>
-            </div>
+            </Link>
+
           </div>
         </div>
       </div>
+
+      <PreFooter/>
     </>
   );
 }

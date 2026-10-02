@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import PreFooter from '../../../PreFooter';
 
 function LiquidFunds() {
   const [step, setStep] = useState(1);
@@ -378,20 +378,7 @@ function LiquidFunds() {
         )}
 
         {/* Bottom Links (Pre-Footer) */}
-        <div className="pre-footer-wrapper">
-          <div className="pre-footer-links">
-            <a href="#">Check mail</a>
-            <a href="#">Disclaimer</a>
-            <a href="#">Commission Disclosure</a>
-          </div>
-          <div className="pre-footer-socials">
-            <i className="fa-brands fa-facebook-f"></i>
-            <i className="fa-brands fa-linkedin-in"></i>
-            <i className="fa-brands fa-google-plus-g"></i>
-            <i className="fa-brands fa-twitter"></i>
-            <i className="fa-brands fa-youtube"></i>
-          </div>
-        </div>
+        <PreFooter />
 
       </div>
     </>

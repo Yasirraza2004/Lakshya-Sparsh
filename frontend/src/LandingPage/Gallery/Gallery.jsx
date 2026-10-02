@@ -8,7 +8,6 @@ import "swiper/css/pagination";
 import "./Gallery.css";
 
 function Gallery() {
-
     const images = [
         "/media/images/IMG-20260902-WA0023.jpg.jpeg",
         "/media/images/IMG-20260902-WA0001.jpg.jpeg",
@@ -28,13 +27,12 @@ function Gallery() {
         "/media/images/IMG-20260902-WA0035.jpg.jpeg",
         "/media/images/IMG-20260902-WA0037.jpg.jpeg",
         "/media/images/IMG-20260902-WA0038.jpg.jpeg",
-
-        
     ];
 
     return (
         <section className="gallery-section">
 
+            {/* Title */}
             <h2 className="gallery-title">
                 Our Gallery
             </h2>
@@ -49,17 +47,21 @@ function Gallery() {
                     ]}
                     slidesPerView={1}
                     spaceBetween={0}
+
                     navigation={{
                         nextEl: ".gallery-next",
                         prevEl: ".gallery-prev",
                     }}
+
                     pagination={{
                         clickable: true,
                     }}
+
                     autoplay={{
                         delay: 3000,
                         disableOnInteraction: false,
                     }}
+
                     loop={true}
                     speed={700}
                     watchOverflow={true}
@@ -67,7 +69,6 @@ function Gallery() {
                 >
 
                     {images.map((image, index) => (
-
                         <SwiperSlide key={index}>
 
                             <div className="gallery-slide">
@@ -80,7 +81,6 @@ function Gallery() {
                             </div>
 
                         </SwiperSlide>
-
                     ))}
 
                 </Swiper>

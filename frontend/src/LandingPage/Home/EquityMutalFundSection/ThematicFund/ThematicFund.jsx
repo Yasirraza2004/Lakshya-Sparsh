@@ -1,8 +1,10 @@
+import PreFooter from "../../../PreFooter";
 import "./ThematicFund.css";
 
 function ThematicFund() {
 
     return (
+        <>
         <div className="thematic-fund-page">
 
             {/* =========================
@@ -164,6 +166,9 @@ function ThematicFund() {
             </section>
 
         </div>
+        
+        <PreFooter />
+        </>
     );
 }
 

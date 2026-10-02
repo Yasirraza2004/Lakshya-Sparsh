@@ -60,7 +60,7 @@ function Services() {
 
         {/* 3 */}
         <div className="col-3 mt-3">
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/elss" style={{ textDecoration: "none" }}>
             <i className="fa-solid fa-file" style={{ fontSize: "60px" }}></i>
 
             <h6 className="mt-4">Smart Tax Saving</h6>
@@ -77,7 +77,7 @@ function Services() {
 
         {/* 4 */}
         <div className="col-3 mt-3">
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/insurance" style={{ textDecoration: "none" }}>
             <i
               className="fa-solid fa-house-flood-water-circle-arrow-right"
               style={{ fontSize: "60px" }}

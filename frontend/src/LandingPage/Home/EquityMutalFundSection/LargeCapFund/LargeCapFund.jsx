@@ -1,8 +1,10 @@
+import PreFooter from "../../../PreFooter";
 import "./LargeCapFund.css";
 
 function LargeCapFund() {
 
     return (
+        <>
         <div className="large-cap-page">
 
             {/* =========================
@@ -152,6 +154,9 @@ function LargeCapFund() {
             </section>
 
         </div>
+
+        <PreFooter />
+        </>
     );
 }
 
