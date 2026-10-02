@@ -5,7 +5,7 @@ import "./index.css";
 import HomePage from "./LandingPage/Home/HomePage";
 import Login from "./LandingPage/Login/Login";
 import Wealth from "./LandingPage/WealthPlanning/Wealth";
-import ELSS from "./ELSS/elss";
+import ELSS from "./ELSS/ELSS";
 
 import AboutUs from "./LandingPage/About Us/AboutUs";
 import StartInvesting from "./LandingPage/Start Investing/StartInvesting";
@@ -20,12 +20,12 @@ import ConservativeHybridFunds from "./LandingPage/Home/DebtFundsSection/Conserv
 import LongTermDebtFunds from "./LandingPage/Home/DebtFundsSection/LongTermDebtFunds/LongTermDebtFunds";
 
 
-import LargeCapFund from "./LandingPage/Home/EquityMutalFundSection/LargeCapFund/largeCapFund";
+import LargeCapFund from "./LandingPage/Home/EquityMutalFundSection/LargeCapFund/LargeCapFund";
 import MidCapFund from "./LandingPage/Home/EquityMutalFundSection/MidCapFund/MidCapFund";
 import MultiCapFund from "./LandingPage/Home/EquityMutalFundSection/MultiCapFund/MultiCapFund";
 import SmallCapFund from "./LandingPage/Home/EquityMutalFundSection/SmallCapFund/SmallCapFund";
 import ThematicFund from "./LandingPage/Home/EquityMutalFundSection/ThematicFund/ThematicFund";
-import Insurance from "./LandingPage/Home/ServicesWeProvide/InsuranceServices/insurance";
+import Insurance from "./LandingPage/Home/ServicesWeProvide/InsuranceServices/Insurance";
 import LifeInsurance from "./LandingPage/Home/ServicesWeProvide/InsuranceServices/LifeInsurance/LifeInsurance";
 import FinancialWorkout from "./LandingPage/FinancialWorkout/FinancialWorkout";
 import Layout from "./Layout";
