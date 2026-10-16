@@ -19,12 +19,12 @@ function Login() {
 
       {/* ================= CREATE ACCOUNT ================= */}
 
-      <div className="auth-container signup-container">
+      
 
-        <div className="auth-content">
+        <div className="signup-container">
 
-          <div className="auth-header">
-            <h1>Create Account</h1>
+          <div className="auth-header text-center">
+            <h2>Create Account</h2>
 
             <p>
               Start your financial journey with Lakshya Sparsh
@@ -140,8 +140,6 @@ function Login() {
           </form>
 
         </div>
-
-      </div>
 
 
       {/* ================= LOGIN ================= */}
