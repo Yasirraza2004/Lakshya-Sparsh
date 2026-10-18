@@ -1,17 +1,37 @@
 import express from "express";
 import passport from "../Config/passport.js";
-import User from "../models/User.js";
+import User from "../models/user.models.js";
 
 const router = express.Router();
+
+const publicUser = (user) => ({
+  id: user.id,
+  fullName: user.fullName,
+  email: user.email,
+  dob: user.dob,
+  mobile: user.mobile,
+});
 
 // SIGNUP
 router.post("/signup", async (req, res, next) => {
   try {
-    const { username, email, password } = req.body;
+    const { fullName, email, password, dob, mobile } = req.body;
 
-    if (!username?.trim() || !email?.trim() || !password) {
+    if (
+      typeof fullName !== "string" ||
+      !fullName.trim() ||
+      typeof email !== "string" ||
+      !email.trim() ||
+      typeof password !== "string" ||
+      !password ||
+      typeof dob !== "string" ||
+      !dob ||
+      typeof mobile !== "string" ||
+      !mobile.trim()
+    ) {
       return res.status(400).json({
-        message: "Username, email, and password are required",
+        message:
+          "Full name, email, password, date of birth, and mobile are required",
       });
     }
 
@@ -21,33 +41,78 @@ router.post("/signup", async (req, res, next) => {
       });
     }
 
-    const user = new User({
-      username: username.trim(),
-      email: email.trim().toLowerCase(),
-    });
+    const normalizedEmail = email.trim().toLowerCase();
+    const normalizedMobile = mobile.trim();
 
-    await User.register(user, password);
-
-    req.logIn(user, (error) => {
-      if (error) return next(error);
-
-      res.status(201).json({
-        message: "Signup successful",
-        user: {
-          id: user.id,
-          username: user.username,
-          email: user.email,
-        },
-      });
-    });
-  } catch (error) {
-    if (error.name === "UserExistsError" || error.code === 11000) {
-      return res.status(409).json({
-        message: "Email is already registered",
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+      return res.status(400).json({
+        message: "Enter a valid email address",
       });
     }
 
-    next(error);
+    if (!/^[6-9]\d{9}$/.test(normalizedMobile)) {
+      return res.status(400).json({
+        message: "Enter a valid 10-digit Indian mobile number",
+      });
+    }
+
+    const parsedDob = new Date(`${dob}T00:00:00.000Z`);
+
+    if (
+      Number.isNaN(parsedDob.getTime()) ||
+      parsedDob.toISOString().slice(0, 10) !== dob ||
+      parsedDob > new Date()
+    ) {
+      return res.status(400).json({
+        message: "Enter a valid date of birth",
+      });
+    }
+
+    const existingUser = await User.findOne({
+      $or: [
+        { email: normalizedEmail },
+        { mobile: normalizedMobile },
+      ],
+    });
+
+    if (existingUser) {
+      return res.status(409).json({
+        message:
+          existingUser.email === normalizedEmail
+            ? "Email is already registered"
+            : "Mobile number is already registered",
+      });
+    }
+
+    const user = new User({
+      fullName: fullName.trim(),
+      email: normalizedEmail,
+      dob: parsedDob,
+      mobile: normalizedMobile,
+      role: "user",
+    });
+
+    const registeredUser = await User.register(user, password);
+
+    req.logIn(registeredUser, (error) => {
+      if (error) return next(error);
+
+      return res.status(201).json({
+        message: "Signup successful",
+        user: publicUser(registeredUser),
+      });
+    });
+  } catch (error) {
+    if (
+      error.name === "UserExistsError" ||
+      error.code === 11000
+    ) {
+      return res.status(409).json({
+        message: "Email or mobile number is already registered",
+      });
+    }
+
+    return next(error);
   }
 });
 
@@ -65,13 +130,9 @@ router.post("/login", (req, res, next) => {
     req.logIn(user, (loginError) => {
       if (loginError) return next(loginError);
 
-      res.json({
+      return res.json({
         message: "Login successful",
-        user: {
-          id: user.id,
-          username: user.username,
-          email: user.email,
-        },
+        user: publicUser(user),
       });
     });
   })(req, res, next);
@@ -85,12 +146,8 @@ router.get("/me", (req, res) => {
     });
   }
 
-  res.json({
-    user: {
-      id: req.user.id,
-      username: req.user.username,
-      email: req.user.email,
-    },
+  return res.json({
+    user: publicUser(req.user),
   });
 });
 
@@ -99,11 +156,16 @@ router.post("/logout", (req, res, next) => {
   req.logout((error) => {
     if (error) return next(error);
 
+    if (!req.session) {
+      res.clearCookie("connect.sid", { path: "/" });
+      return res.json({ message: "Logout successful" });
+    }
+
     req.session.destroy((sessionError) => {
       if (sessionError) return next(sessionError);
 
       res.clearCookie("connect.sid", { path: "/" });
-      res.json({ message: "Logout successful" });
+      return res.json({ message: "Logout successful" });
     });
   });
 });

@@ -14,11 +14,9 @@ import Download from "./LandingPage/Download/Download";
 import Gallery from "./LandingPage/Gallery/Gallery";
 import Contact from "./LandingPage/Contact Us/Contact";
 
-
 import LiquidFunds from "./LandingPage/Home/DebtFundsSection/LiquidFunds/LiquidFunds";
 import ConservativeHybridFunds from "./LandingPage/Home/DebtFundsSection/ConservativeHybridFunds/ConservativeHybridFunds";
 import LongTermDebtFunds from "./LandingPage/Home/DebtFundsSection/LongTermDebtFunds/LongTermDebtFunds";
-
 
 import LargeCapFund from "./LandingPage/Home/EquityMutalFundSection/LargeCapFund/LargeCapFund";
 import MidCapFund from "./LandingPage/Home/EquityMutalFundSection/MidCapFund/MidCapFund";
@@ -49,10 +47,6 @@ import SIPCalculator from "./SipCalculator/SipCalculator";
 import LumpsumCalculator from "./LumpsumCalculator/LumpsumCalculator";
 import Taxation from "./Taxation/Taxation";
 
-
-
-
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
@@ -60,7 +54,6 @@ createRoot(document.getElementById("root")).render(
         {/* Pages with Navbar + Footer */}
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/wealth" element={<Wealth />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/start" element={<StartInvesting />} />
@@ -137,7 +130,6 @@ createRoot(document.getElementById("root")).render(
           <Route path="/lumpsum_calculator" element={<LumpsumCalculator />} />
 
           <Route path="/Taxation" element={<Taxation />} />
-
         </Route>
 
         {/* ONLY Navbar + FinancialWorkout */}
@@ -150,6 +142,8 @@ createRoot(document.getElementById("root")).render(
             </>
           }
         />
+
+        <Route path="/login" element={<Login />} />
 
         {/* <Route path="*" element={<PageNotFound />} /> */}
       </Routes>
